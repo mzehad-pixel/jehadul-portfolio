@@ -2,140 +2,160 @@ export const portfolioData = {
   personal: {
     name: "Md Jehadul Islam",
     shortName: "Jehadul",
-    role: "Senior Product Designer",
-    location: "Dhaka, Bangladesh",
-    availability: "Available for new projects & full-time roles",
-    tagline: "Crafting High-Impact Digital Products & Design Systems",
-    bio: "I am a Senior Product & UI/UX Designer with over 5 years of experience building scalable SaaS, Fintech, and consumer applications. I bridge the gap between user needs and business revenue with clean aesthetics and systematic design.",
-    phone: "+8801670566270",
+    role: "Sr. UX Designer",
+    currentCompany: "Technohaven Company Limited",
+    location: "Ibrahimpur Road, Mirpur 14, Dhaka, Bangladesh",
+    availability: "Available for high-impact UX & Product Design roles",
+    tagline: "Crafting Meaningful & Functional Products That Really Work",
+    goal: "My goal is to build meaningful and functional products that really work with extensive skills in SAAS, web, and mobile design. I’m passionate about design, new technology, and creating user-friendly, intuitive digital products and interfaces.",
+    phone: "+88 01670566270",
     email: "m.zehad@gmail.com",
-    dribbble: "https://dribbble.com/jehadbd",
+    linkedin: "https://shorturl.at/Tp9bL",
+    portfolioShort: "https://shorturl.at/vP5Ym",
     behance: "https://www.behance.net/mdjehadulislam",
-    linkedin: "https://www.linkedin.com/in/md-jehadul-islam/",
+    dribbble: "https://www.dribbble.com/jehadbd",
     resumeUrl: "/resume.pdf",
     avatar: "/avatar.png",
     photo: "/profile.png",
   },
   metrics: [
     { value: "5+", label: "Years Experience" },
-    { value: "40+", label: "Projects Shipped" },
+    { value: "10+", label: "Global Brands & Apps" },
     { value: "1M+", label: "Users Impacted" },
-    { value: "100%", label: "Client Satisfaction" },
+    { value: "100%", label: "Conversion Focused" },
   ],
   services: [
     {
       num: "01",
       title: "UI / UX Design",
-      desc: "Designing intuitive, human-centered interfaces that balance aesthetics with frictionless usability across iOS, Android, and Web.",
-      deliverables: ["User Research & Personas", "Wireframes & Prototypes", "Micro-interactions & UX Audits"]
+      desc: "Conducting in-depth user research, wireframing, high-fidelity interactive prototyping, and usability validation for iOS, Android, and Web platforms.",
+      deliverables: ["User Persona & Journey Mapping", "Usability Testing & UX Audits", "High-Fidelity Interactive Mockups"]
     },
     {
       num: "02",
-      title: "Design Systems",
-      desc: "Creating scalable, tokenized component libraries in Figma that accelerate development and maintain 100% brand consistency.",
-      deliverables: ["Atomic Component Libraries", "Design Tokens & Documentation", "Figma to Code Alignment"]
+      title: "Fintech & Banking Systems",
+      desc: "Specialized in high-security, conversion-friendly fintech products: digital banking apps (MVP to Scale), remittance, utility payments, and merchant EMI loans.",
+      deliverables: ["Banking Workflows & KYC Verification", "Digital Wallet & Payment Gateways", "Merchant Transaction Dashboards"]
     },
     {
       num: "03",
-      title: "Fintech & SaaS Architecture",
-      desc: "Specialized in complex domain products: digital banking, merchant payment gateways, remittance flows, and data-dense dashboards.",
-      deliverables: ["Complex Multi-step Workflows", "Data Visualization", "Frictionless Checkout & KYC"]
+      title: "Design Systems & Token Architecture",
+      desc: "Creating systematic, tokenized component libraries in Figma to ensure 100% brand consistency, rapid iteration, and flawless developer handoff.",
+      deliverables: ["Atomic UI Component Libraries", "Design Tokens & Variable Specs", "Comprehensive Figma Documentation"]
     },
     {
       num: "04",
-      title: "Product Strategy",
-      desc: "Aligning user needs directly with business goals through rapid design sprints, competitive analysis, and conversion optimization.",
-      deliverables: ["Design Sprints", "Conversion Rate Optimization", "Stakeholder Alignment"]
+      title: "E-Commerce & OTT Platforms",
+      desc: "Designing world-class consumer shopping funnels and streaming media experiences for leading global retail brands and international broadcasters.",
+      deliverables: ["Cart & One-Page Checkout Optimization", "Media Streaming & Content Discovery", "Shopify Theme Architecture & Plugins"]
     }
   ],
   projects: [
     {
-      id: "kori-bank",
-      title: "Kori Digital Bank PLC",
-      subtitle: "Next-Gen Digital Banking & Enterprise Design System",
+      id: "banking-app",
+      title: "Digital Banking App (MVP)",
+      subtitle: "End-to-End Banking Experience from Concept to Launch",
       category: "Fintech",
-      year: "2024",
-      client: "Kori Digital Bank",
-      role: "Lead Design System Designer",
-      tags: ["Fintech", "Design System", "Mobile App", "Web App"],
+      year: "May 2024 — Present",
+      client: "Technohaven Company Limited",
+      role: "Sr. UX Designer (Dhaka, Bangladesh)",
+      tags: ["Fintech", "Mobile Banking", "Design System", "User Research", "MVP"],
       image: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?q=80&w=1200&auto=format&fit=crop",
-      overview: "Designed a comprehensive, accessible design system and core digital banking journeys for Kori Digital Bank PLC. Standardized dozens of components including dynamic authentication, multi-step transaction authorization, and real-time ledger dashboards.",
+      overview: "Leading the complete UX/UI design of a flagship banking application (MVP version) starting from initial user research and concept ideation to high-fidelity prototyping and developer implementation. Optimizing end-to-end user journeys to meet stringent security standards and business growth goals.",
       highlights: [
-        "Architected complete token-based design system across light & dark themes",
-        "Streamlined account creation and biometric KYC verification flows",
-        "Decreased frontend handoff discrepancy by 45%"
+        "Conducted extensive user research, card sorting, and journey mapping for banking customers",
+        "Created wireframes and tested interactive high-fidelity prototypes with real users",
+        "Collaborated closely with engineering to ensure seamless, pixel-perfect developer implementation"
       ],
       linkText: "View Case Study"
     },
     {
       id: "smanager",
-      title: "sManager (Sheba Platform)",
-      subtitle: "Empowering 1M+ Micro & Small Businesses in Bangladesh",
+      title: "sManager App",
+      subtitle: "Digital Collection, Top-up, Utility Bill & Merchant EMI",
       category: "MSME Fintech",
-      year: "2022",
+      year: "Jan 2022 — Jul 2022",
       client: "Sheba Platform Limited",
-      role: "Product Designer",
-      tags: ["Mobile App", "Fintech", "SaaS", "Top-Up & EMI"],
+      role: "Product Designer (Dhaka, Bangladesh)",
+      tags: ["Mobile App", "Fintech", "MSME SaaS", "EMI Loans", "Utility Bills"],
       image: "https://images.unsplash.com/photo-1556742049-0a67c5574f73?q=80&w=1200&auto=format&fit=crop",
-      overview: "Crafted core revenue-generating features for sManager, Bangladesh's leading MSME platform. Researched and designed mobile flows from scratch for digital collections, utility top-up, and merchant EMI loans.",
+      overview: "Designed mobile applications from scratch for sManager. Led product research, design sprints, usability testing, and UI design for core revenue-generating modules: Digital Collections, Mobile Top-up, Utility Bill payments, and Merchant EMI loans.",
       highlights: [
-        "Conducted in-field user interviews with local shop owners to tailor UX for low digital literacy",
-        "Streamlined digital cash collection and payment link generation",
-        "Achieved 28% increase in weekly repeated merchant transactions"
+        "Conducted in-field user interviews and usability tests to make complex finance simple for small merchants",
+        "Designed high-conversion mobile interfaces that boosted daily active transaction volume",
+        "Introduced intuitive design patterns for low-digital-literacy users across Bangladesh"
       ],
       linkText: "View Case Study"
     },
     {
-      id: "globpay",
-      title: "GlobPay & Deshi-Pay",
-      subtitle: "Cross-Border Remittance & Consumer Digital Wallet",
-      category: "Fintech & Payments",
-      year: "2021 - 2022",
-      client: "Newroz Technology Ltd",
-      role: "UI/UX Designer",
-      tags: ["Cross-Border", "Crypto/Fiat", "iOS & Android", "FINTRAC Canada"],
-      image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=1200&auto=format&fit=crop",
-      overview: "Designed frictionless mobile apps for GlobPay (registered with FINTRAC Canada) and Deshi-Pay, enabling low-cost global money transfers, personal micro-loans, and multi-currency digital storage.",
-      highlights: [
-        "Designed transparent exchange rate calculator and status tracker",
-        "Created a secure 3-step KYC onboarding flow with high conversion",
-        "Consistent brand guidelines across all customer touchpoints"
-      ],
-      linkText: "View Case Study"
-    },
-    {
-      id: "altcom",
-      title: "Altcom Global Commerce",
-      subtitle: "Multi-Brand E-Commerce & Retail Experience",
+      id: "altcom-hugo-boss",
+      title: "HUGO BOSS & Global E-Commerce",
+      subtitle: "Premium Shopping Experiences & High-Converting Checkout",
       category: "E-Commerce",
-      year: "2022 - 2024",
+      year: "Jul 2022 — May 2024",
       client: "Altcom LLC",
-      role: "Senior UI/UX Designer",
-      tags: ["E-Commerce", "Web & Mobile", "Design System", "Conversion"],
+      role: "UX Designer - II (Beirut, Lebanon - Remote)",
+      tags: ["E-Commerce", "HUGO BOSS", "Mikesports", "IRAQ Mall", "Menwardrob"],
       image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1200&auto=format&fit=crop",
-      overview: "Redesigned consumer-facing web and mobile applications for international retail brands under Altcom. Focused on responsive product discovery, personalized recommendations, and a high-converting one-page checkout.",
+      overview: "Designed mobile applications, e-commerce websites, and direct-to-consumer digital products for prestigious brands including HUGO BOSS, Mikesports, IRAQ Mall, and Menwardrob. Introduced premium membership plans and streamlined checkout flows.",
       highlights: [
-        "Engineered modular filter, sorting, and live cart drawer interactions",
-        "Boosted checkout completion rate by 22% on mobile devices",
-        "Integrated interactive gift packaging and dynamic delivery calculators"
+        "Crafted luxury, brand-aligned interfaces and responsive web & mobile storefronts",
+        "Introduced premium tier membership models and loyalty user flows",
+        "Optimized mobile browsing, dynamic filtering, and one-click purchase interactions"
       ],
       linkText: "View Case Study"
     },
     {
-      id: "dnothi",
-      title: "D-NOTHI GovTech Platform",
-      subtitle: "Enterprise Document Lifecycle & Workflow Management",
-      category: "Enterprise SaaS",
-      year: "2023",
-      client: "Enterprise E-Governance",
-      role: "Product Designer",
-      tags: ["Enterprise SaaS", "Web Platform", "Complex Workflows", "GovTech"],
-      image: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1200&auto=format&fit=crop",
-      overview: "Transformed bureaucratic document flows into an intuitive digital filing system. Modeled incoming and outgoing mail tracking, note-taking, draft creation, and digital signature authorization.",
+      id: "mbc-ott",
+      title: "MBC Group OTT Streaming Platform",
+      subtitle: "Next-Gen Video Streaming & Content Discovery",
+      category: "Entertainment",
+      year: "2023 — 2024",
+      client: "MBC Group / Altcom LLC",
+      role: "UX Designer - II",
+      tags: ["OTT Platform", "Streaming Media", "Video UX", "Consumer App"],
+      image: "https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?q=80&w=1200&auto=format&fit=crop",
+      overview: "Designed UI/UX for the flagship OTT video streaming platform for MBC Group, the largest media broadcaster in the Middle East. Optimized video player controls, personalized recommendations, and multi-device content discovery.",
       highlights: [
-        "Unified high-density tables with customizable views and filters",
-        "Reduced document processing time by over 50% across departments",
-        "Built responsive web views for tablet and desktop monitors"
+        "Designed fluid navigation for browsing extensive catalogs of movies, series, and live television",
+        "Engineered intuitive video player gestures, subtitle toggling, and watchlist management",
+        "Balanced high visual fidelity with rapid content loading and accessibility"
+      ],
+      linkText: "View Case Study"
+    },
+    {
+      id: "globpay-deshipay",
+      title: "GlobPay & Deshi-Pay",
+      subtitle: "Global Remittance (FINTRAC Canada) & Digital Wallet",
+      category: "Fintech",
+      year: "Jun 2021 — Jan 2022",
+      client: "Newroz Technology Limited",
+      role: "UI/UX Designer (Dhaka, Bangladesh)",
+      tags: ["Cross-Border", "FINTRAC Canada", "Lending", "Digital Wallet"],
+      image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=1200&auto=format&fit=crop",
+      overview: "Designed mobile apps from scratch for GlobPay (registered with FINTRAC, Canada) to help users transfer money globally at lowest cost, and Deshi-Pay connecting consumer payments, micro-lending, and personal/business banking.",
+      highlights: [
+        "Built frictionless cross-border transfer calculator with real-time foreign exchange status",
+        "Designed automated biometric KYC verification and digital identity submission flows",
+        "Unified consumer personal finances, bill payments, and merchant lending under Deshi-Pay"
+      ],
+      linkText: "View Case Study"
+    },
+    {
+      id: "altcom-nfc",
+      title: "Altcom NFC Technology",
+      subtitle: "Smart Contactless Hardware-Software Interaction",
+      category: "Hardware & Tech",
+      year: "2023",
+      client: "Altcom LLC",
+      role: "UX Designer - II",
+      tags: ["NFC Technology", "Hardware UX", "IoT", "Digital Identity"],
+      image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1200&auto=format&fit=crop",
+      overview: "Designed modern contactless interaction flows combining physical NFC hardware devices with real-time cloud profiles, dynamic link sharing, and engagement analytics.",
+      highlights: [
+        "Engineered smooth tap-to-share onboarding with instant feedback animations",
+        "Designed interactive web management dashboard for card customization",
+        "Streamlined enterprise bulk management for corporate teams"
       ],
       linkText: "View Case Study"
     }
@@ -143,82 +163,144 @@ export const portfolioData = {
   process: [
     {
       step: "01",
-      title: "Request & Alignment",
-      desc: "We begin with a deep dive into your product vision, target audience, business model, and project milestones to ensure shared understanding.",
+      title: "Research & Discovery",
+      desc: "User surveys, persona creation, journey mapping, competitive analysis, and card sorting to anchor design decisions in verifiable user needs.",
     },
     {
       step: "02",
-      title: "Research & Ideation",
-      desc: "Mapping out user journey maps, information architecture, competitive audits, and low-fidelity wireframes to solidify the core UX foundation.",
+      title: "Information Architecture",
+      desc: "Defining intuitive user flows, structural flow diagrams, and low-fidelity wireframes that eliminate cognitive overload.",
     },
     {
       step: "03",
-      title: "Visual Design & Systems",
-      desc: "Transforming concepts into high-fidelity screens. Crafting typography hierarchy, color palettes, micro-interactions, and reusable components in Figma.",
+      title: "Design Systems & UI",
+      desc: "Weaving atomic design systems, component libraries, typography hierarchy, and pixel-perfect high-fidelity mockups in Figma.",
     },
     {
       step: "04",
-      title: "User Testing & Refine",
-      desc: "Validating prototypes through usability testing, heuristic evaluations, and stakeholder feedback to eliminate edge-case friction.",
+      title: "Testing & Validation",
+      desc: "Validating through interactive prototypes, usability testing, A/B testing, design critiques, and iterative refinement.",
     },
     {
       step: "05",
-      title: "Developer Handoff & Launch",
-      desc: "Delivering pixel-perfect Figma specs, design tokens, responsive guidelines, and supporting frontend developers through launch.",
+      title: "Developer Collaboration",
+      desc: "Detailed documentation, design tokens, sprint planning, Kanban collaboration, and close developer handoff through launch.",
     }
   ],
   career: [
     {
+      company: "Technohaven Company Limited",
+      role: "Sr. UX Designer",
+      period: "May 2024 — Present",
+      location: "Dhaka, Bangladesh",
+      description: "Leading the UX design of a flagship banking application (MVP version) from concept to launch. Conducting user research, wireframing, high-fidelity prototypes, and collaborating closely with developers."
+    },
+    {
       company: "Altcom LLC",
-      role: "Senior UI/UX Designer",
-      period: "August 2022 — July 2024",
-      description: "Led product design for mobile applications, e-commerce platforms, and direct-to-consumer digital ecosystems."
+      role: "UX Designer - II",
+      period: "July 2022 — May 2024",
+      location: "Beirut, Lebanon (Remote)",
+      description: "Designed mobile applications and e-commerce websites for global brands including HUGO BOSS, Mikesports, IRAQ Mall, Altcom NFC Technology, Menwardrob, and MBC Group OTT Platform."
     },
     {
       company: "Sheba Platform Limited",
       role: "Product Designer",
-      period: "January 2022 — August 2022",
-      description: "Spearheaded sManager mobile app features: Digital Collections, Utility Top-up, and Merchant EMI loans with extensive field user testing."
+      period: "January 2022 — July 2022",
+      location: "Dhaka, Bangladesh",
+      description: "Designed mobile applications from scratch in sManager app. Led design sprints, user testing, and UI design for Top-up, Utility Bill, Digital Collection, and merchant EMI loans."
     },
     {
       company: "Newroz Technology Limited",
       role: "UI/UX Designer",
-      period: "August 2021 — February 2022",
-      description: "Designed fintech and remittance applications (GlobPay registered with FINTRAC Canada, and Deshi-Pay digital wallet)."
+      period: "June 2021 — January 2022",
+      location: "Dhaka, Bangladesh",
+      description: "Designed GlobPay mobile app from scratch (fintech registered with FINTRAC, Canada for lowest-cost global transfers) and Deshi-Pay (payments, lending, and banking ecosystem)."
     },
     {
       company: "Nurency Digital Agency",
       role: "UI/UX Designer",
-      period: "November 2019 — August 2021",
-      description: "Designed modern web applications, SaaS dashboards, LMS platforms, and high-conversion e-commerce themes."
+      period: "November 2019 — June 2021",
+      location: "Dhaka, Bangladesh",
+      description: "Designed mobile applications, websites, and SAAS applications across E-commerce, LMS, Task Management, and Shopify themes/plugins."
     }
   ],
-  skills: [
-    "Product Design (UI/UX)",
-    "Design Systems & Tokens",
-    "Wireframing & Prototyping",
-    "User Research & Usability Testing",
-    "Information Architecture",
-    "Interaction Design",
-    "Figma & FigJam",
-    "Mobile App Design (iOS/Android)",
-    "SaaS & Enterprise Dashboards",
-    "Design Sprints & Workshops"
+  skillsCategorized: {
+    research: [
+      "User Persona",
+      "Journey Mapping",
+      "A/B Testing",
+      "Usability Testing",
+      "Validation & Analysis",
+      "Card Sorting",
+      "User Surveys"
+    ],
+    prototype: [
+      "Information Architecture",
+      "Flow Diagrams",
+      "Wireframing",
+      "Interactive Prototyping"
+    ],
+    design: [
+      "User-centered Design",
+      "Interaction Design",
+      "Design Systems",
+      "High Fidelity Mockups",
+      "Atomic Tokens"
+    ],
+    collaboration: [
+      "Design Review & Critique",
+      "Documentation",
+      "Kanban & Jira",
+      "UX Strategy",
+      "Sprint Planning"
+    ],
+    tools: [
+      "Figma",
+      "Sketch",
+      "Miro",
+      "InVision",
+      "Webflow",
+      "Framer",
+      "Balsamiq",
+      "Jira",
+      "HotJar",
+      "Google Analytics",
+      "Adobe Photoshop",
+      "Adobe Illustrator"
+    ]
+  },
+  education: [
+    {
+      institution: "National Institute of Textile Engineering & Research — University of Dhaka",
+      degree: "B.Sc in Textile Engineering",
+      period: "2015 — 2019"
+    },
+    {
+      institution: "Govt. Barishal College, Barishal",
+      degree: "Higher Secondary Certificate (HSC)",
+      period: "2012 — 2014"
+    }
+  ],
+  certifications: [
+    {
+      title: "Google UX Design Professional Certificate",
+      issuer: "Google / Coursera"
+    }
   ],
   testimonials: [
     {
-      quote: "Jehadul transformed our complex financial workflow into an intuitive, elegant experience that our users loved immediately. His attention to design systems saved our engineering team weeks.",
-      author: "Product Director",
-      role: "Fintech Group"
-    },
-    {
-      quote: "Working with Jehadul was a game changer for our e-commerce platform. His meticulous attention to detail and customer psychology drove a noticeable increase in our conversion rates.",
-      author: "Managing Partner",
-      role: "Altcom Ecosystem"
-    },
-    {
-      quote: "One of the most reliable and forward-thinking product designers. He takes ownership of projects from initial sketch to final developer handoff seamlessly.",
+      quote: "Jehadul has an exceptional ability to translate intricate financial flows into simple, beautiful, and intuitive mobile screens. His work on our banking application was pivotal.",
       author: "Engineering Lead",
+      role: "Technohaven"
+    },
+    {
+      quote: "Working with Jehadul on HUGO BOSS and our e-commerce properties elevated our design standards across all platforms. His attention to detail and user psychology is outstanding.",
+      author: "Product Director",
+      role: "Altcom LLC"
+    },
+    {
+      quote: "Jehadul brought rigor to our product research and design sprints at sManager. He designs with deep empathy for real end-users.",
+      author: "Head of Product",
       role: "Sheba Platform"
     }
   ]

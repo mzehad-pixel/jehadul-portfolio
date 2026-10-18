@@ -1,6 +1,6 @@
 import React from 'react';
 import { portfolioData } from '../data/portfolioData';
-import { ArrowDown, ArrowUpRight, Download, Sparkles, ShieldCheck, Layers, Award } from 'lucide-react';
+import { ArrowDown, Download, Award, ShieldCheck, Layers, Sparkles, Building2 } from 'lucide-react';
 
 export default function Hero() {
   const { personal, metrics } = portfolioData;
@@ -29,21 +29,21 @@ export default function Hero() {
           <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-white leading-[1.08] mb-6">
             I am <span className="font-serif italic font-medium text-white/95 tracking-normal">Jehadul</span>, <br />
             <span className="bg-gradient-to-r from-white via-white/90 to-white/60 bg-clip-text text-transparent">
-              Senior Product Designer
+              {personal.role}
             </span>
           </h1>
 
-          <p className="text-base sm:text-lg md:text-xl text-subtext max-w-2xl mx-auto font-normal leading-relaxed mb-10">
-            Specialized in building frictionless Fintech workflows, scalable Design Systems, and enterprise SaaS platforms that turn complex problems into intuitive digital products.
+          <p className="text-base sm:text-lg md:text-xl text-subtext max-w-3xl mx-auto font-normal leading-relaxed mb-8">
+            "{personal.goal}"
           </p>
 
           {/* Action Buttons */}
-          <div className="flex flex-wrap items-center justify-center gap-4 mb-16">
+          <div className="flex flex-wrap items-center justify-center gap-4 mb-14">
             <a
               href="#works"
               className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-white text-black font-semibold text-sm hover:bg-neutral-200 transition-all duration-200 hover:scale-105 active:scale-95 shadow-xl shadow-white/5"
             >
-              <span>Explore Portfolio</span>
+              <span>Explore Selected Works</span>
               <ArrowDown className="w-4 h-4" />
             </a>
 
@@ -54,13 +54,27 @@ export default function Hero() {
               className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full bg-white/[0.06] hover:bg-white/[0.12] text-white border border-white/10 font-medium text-sm transition-all duration-200 hover:scale-105 active:scale-95 backdrop-blur-sm"
             >
               <Download className="w-4 h-4 text-white/70" />
-              <span>Download CV</span>
+              <span>Download Resume</span>
             </a>
+          </div>
+
+          {/* Brands Ticker / Credibility Banner */}
+          <div className="flex flex-wrap items-center justify-center gap-y-2 gap-x-6 text-xs text-muted pb-4 border-b border-white/[0.06] max-w-2xl mx-auto">
+            <span className="text-white/40 uppercase tracking-widest text-[10px] font-semibold">Featured Work & Brands:</span>
+            <span className="text-white/80 font-medium">HUGO BOSS</span>
+            <span className="text-white/40">•</span>
+            <span className="text-white/80 font-medium">Mikesports</span>
+            <span className="text-white/40">•</span>
+            <span className="text-white/80 font-medium">MBC Group</span>
+            <span className="text-white/40">•</span>
+            <span className="text-white/80 font-medium">sManager</span>
+            <span className="text-white/40">•</span>
+            <span className="text-white/80 font-medium">Technohaven</span>
           </div>
         </div>
 
         {/* Hero Visual Card (Specter Style Showcase) */}
-        <div className="relative max-w-4xl mx-auto mt-6">
+        <div className="relative max-w-4xl mx-auto mt-12">
           <div className="glass-card rounded-3xl p-4 sm:p-8 relative overflow-hidden border border-white/15 shadow-2xl">
             {/* Ambient inner glow */}
             <div className="absolute top-0 right-0 w-80 h-80 bg-white/[0.02] rounded-full blur-2xl pointer-events-none" />
@@ -97,16 +111,16 @@ export default function Hero() {
               <div className="md:col-span-7 flex flex-col justify-between h-full">
                 <div>
                   <div className="inline-flex items-center gap-2 text-xs font-medium text-emerald-400/90 bg-emerald-500/10 px-3 py-1 rounded-full mb-4 border border-emerald-500/20">
-                    <ShieldCheck className="w-3.5 h-3.5" />
-                    <span>Proven Product Track Record</span>
+                    <Building2 className="w-3.5 h-3.5" />
+                    <span>Currently Sr. UX Designer at Technohaven</span>
                   </div>
 
                   <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight mb-4 leading-snug">
-                    Engineering clarity out of complexity for ambitious products.
+                    Architecting high-converting digital products from MVP to enterprise scale.
                   </h3>
 
                   <p className="text-subtext text-sm sm:text-base leading-relaxed mb-6 font-normal">
-                    With deep hands-on expertise in design systems, digital banking, and high-conversion e-commerce funnels, I partner with forward-thinking teams to architect intuitive user experiences.
+                    Extensive experience across mobile applications, SAAS dashboards, e-commerce platforms, and transaction-critical fintech ecosystems. Combining rigorous user research with atomic design systems.
                   </p>
                 </div>
 
@@ -115,20 +129,20 @@ export default function Hero() {
                   <div className="p-3 rounded-xl bg-white/[0.03] border border-white/[0.06]">
                     <div className="flex items-center gap-2 text-white font-medium text-xs mb-1">
                       <Layers className="w-3.5 h-3.5 text-white/70" />
-                      <span>Design Systems</span>
+                      <span>Fintech & Banking</span>
                     </div>
                     <p className="text-[11px] text-muted leading-relaxed">
-                      Tokenized libraries & Figma-to-code components.
+                      MVP banking, remittance, digital wallets & EMI loans.
                     </p>
                   </div>
 
                   <div className="p-3 rounded-xl bg-white/[0.03] border border-white/[0.06]">
                     <div className="flex items-center gap-2 text-white font-medium text-xs mb-1">
                       <Sparkles className="w-3.5 h-3.5 text-white/70" />
-                      <span>Fintech Workflows</span>
+                      <span>E-Commerce & OTT</span>
                     </div>
                     <p className="text-[11px] text-muted leading-relaxed">
-                      KYC, payments, loans & ledger dashboards.
+                      Global luxury retail (HUGO BOSS) & media streaming.
                     </p>
                   </div>
                 </div>

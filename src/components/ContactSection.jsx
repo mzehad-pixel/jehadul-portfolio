@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { portfolioData } from '../data/portfolioData';
-import { Mail, Phone, MapPin, Send, CheckCircle2, ArrowUpRight, Copy, Check } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, CheckCircle2, ArrowUpRight, Copy, Check, ExternalLink } from 'lucide-react';
 
 export default function ContactSection() {
   const { personal } = portfolioData;
@@ -8,7 +8,7 @@ export default function ContactSection() {
   const [formState, setFormState] = useState({
     name: '',
     email: '',
-    service: 'Product Design (UI/UX)',
+    service: 'Mobile Banking & Fintech UX',
     message: ''
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -22,8 +22,6 @@ export default function ContactSection() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!formState.name || !formState.email || !formState.message) return;
-    
-    // Smooth interactive submission simulation
     setIsSubmitted(true);
   };
 
@@ -45,7 +43,7 @@ export default function ContactSection() {
             <span className="font-serif italic font-normal text-white/90">Let's Create Together!</span>
           </h2>
           <p className="text-subtext text-sm sm:text-base max-w-xl mx-auto font-normal">
-            Whether you need a complete design system, a fintech MVP designed from scratch, or an experienced Senior Product Designer on your team — reach out today.
+            Whether you need a banking app designed from concept to implementation, a conversion-focused e-commerce experience, or a Senior UX Designer for your product team.
           </p>
         </div>
 
@@ -55,10 +53,10 @@ export default function ContactSection() {
           <div className="lg:col-span-5 glass-card rounded-3xl p-6 sm:p-8 border border-white/10 space-y-6">
             <div>
               <h3 className="text-lg font-bold text-white mb-2">
-                Contact Information
+                Contact Details
               </h3>
               <p className="text-xs sm:text-sm text-subtext leading-relaxed">
-                Reach out directly via email, phone, or explore my portfolio works on Dribbble and Behance.
+                Feel free to email me, call directly, or explore my live portfolios across Dribbble, Behance, and LinkedIn.
               </p>
             </div>
 
@@ -90,8 +88,8 @@ export default function ContactSection() {
                 <Phone className="w-5 h-5" />
               </div>
               <div>
-                <span className="text-[10px] text-muted block uppercase tracking-wider font-semibold">Phone / WhatsApp</span>
-                <a href={`tel:${personal.phone}`} className="text-xs sm:text-sm font-semibold text-white hover:underline">
+                <span className="text-[10px] text-muted block uppercase tracking-wider font-semibold">Phone / Mobile</span>
+                <a href={`tel:${personal.phone.replace(/\s+/g, '')}`} className="text-xs sm:text-sm font-semibold text-white hover:underline">
                   {personal.phone}
                 </a>
               </div>
@@ -105,15 +103,15 @@ export default function ContactSection() {
               <div>
                 <span className="text-[10px] text-muted block uppercase tracking-wider font-semibold">Location</span>
                 <span className="text-xs sm:text-sm font-semibold text-white">
-                  {personal.location} (Remote Available Worldwide)
+                  {personal.location}
                 </span>
               </div>
             </div>
 
-            {/* Social Links */}
+            {/* Social & Portfolio Links from Resume */}
             <div className="pt-4 border-t border-white/[0.06]">
               <span className="text-xs font-semibold text-muted uppercase tracking-wider block mb-3">
-                Social Profiles
+                Online Portfolios & Profiles
               </span>
               <div className="grid grid-cols-2 gap-2.5">
                 <a
@@ -144,13 +142,13 @@ export default function ContactSection() {
                   <ArrowUpRight className="w-3.5 h-3.5 text-muted group-hover:text-white transition" />
                 </a>
                 <a
-                  href={personal.resumeUrl}
+                  href={personal.portfolioShort}
                   target="_blank"
                   rel="noreferrer"
                   className="flex items-center justify-between p-3 rounded-xl bg-white/[0.03] border border-white/[0.06] hover:border-white/20 text-xs font-medium text-white transition group"
                 >
-                  <span>Resume (PDF)</span>
-                  <ArrowUpRight className="w-3.5 h-3.5 text-muted group-hover:text-white transition" />
+                  <span>Portfolio Doc</span>
+                  <ExternalLink className="w-3.5 h-3.5 text-muted group-hover:text-white transition" />
                 </a>
               </div>
             </div>
@@ -168,12 +166,12 @@ export default function ContactSection() {
                   Message Sent Successfully!
                 </h3>
                 <p className="text-subtext text-sm max-w-md mx-auto mb-6">
-                  Thank you, {formState.name}! I have received your message and will get back to you within 24 hours.
+                  Thank you, {formState.name}! I have received your message and will respond within 24 hours.
                 </p>
                 <button
                   onClick={() => {
                     setIsSubmitted(false);
-                    setFormState({ name: '', email: '', service: 'Product Design (UI/UX)', message: '' });
+                    setFormState({ name: '', email: '', service: 'Mobile Banking & Fintech UX', message: '' });
                   }}
                   className="px-6 py-2.5 rounded-full bg-white/10 hover:bg-white/20 text-white text-xs font-semibold transition"
                 >
@@ -190,7 +188,7 @@ export default function ContactSection() {
                     <input
                       type="text"
                       required
-                      placeholder="Jane Doe"
+                      placeholder="e.g. David Clark"
                       value={formState.name}
                       onChange={(e) => setFormState({ ...formState, name: e.target.value })}
                       className="w-full px-4 py-3 rounded-xl bg-white/[0.04] border border-white/[0.08] focus:border-white/30 text-sm text-white placeholder-white/20 outline-none transition"
@@ -204,7 +202,7 @@ export default function ContactSection() {
                     <input
                       type="email"
                       required
-                      placeholder="jane@company.com"
+                      placeholder="david@company.com"
                       value={formState.email}
                       onChange={(e) => setFormState({ ...formState, email: e.target.value })}
                       className="w-full px-4 py-3 rounded-xl bg-white/[0.04] border border-white/[0.08] focus:border-white/30 text-sm text-white placeholder-white/20 outline-none transition"
@@ -214,29 +212,29 @@ export default function ContactSection() {
 
                 <div>
                   <label className="block text-xs font-medium text-muted uppercase tracking-wider mb-2">
-                    Service Interested In
+                    Service / Area of Interest
                   </label>
                   <select
                     value={formState.service}
                     onChange={(e) => setFormState({ ...formState, service: e.target.value })}
                     className="w-full px-4 py-3 rounded-xl bg-[#121212] border border-white/[0.08] focus:border-white/30 text-sm text-white outline-none transition"
                   >
-                    <option value="Product Design (UI/UX)">Product Design (UI/UX)</option>
-                    <option value="Design System Architecture">Design System Architecture</option>
-                    <option value="Fintech / SaaS Workflows">Fintech / SaaS Workflows</option>
-                    <option value="UX Audit & Consultation">UX Audit & Consultation</option>
-                    <option value="Full-time Opportunity">Full-time Opportunity</option>
+                    <option value="Mobile Banking & Fintech UX">Mobile Banking & Fintech UX</option>
+                    <option value="Design System & Atomic Tokens">Design System & Atomic Tokens</option>
+                    <option value="E-Commerce & Checkout Optimization">E-Commerce & Checkout Optimization</option>
+                    <option value="SAAS & Enterprise Workflows">SAAS & Enterprise Workflows</option>
+                    <option value="Full-time UX Designer Role">Full-time UX Designer Role</option>
                   </select>
                 </div>
 
                 <div>
                   <label className="block text-xs font-medium text-muted uppercase tracking-wider mb-2">
-                    Project Details / Message *
+                    Project Details / Inquiry *
                   </label>
                   <textarea
                     required
                     rows={4}
-                    placeholder="Tell me about your product goals, timeline, and requirements..."
+                    placeholder="Tell me about your product requirements, team goals, and timeline..."
                     value={formState.message}
                     onChange={(e) => setFormState({ ...formState, message: e.target.value })}
                     className="w-full px-4 py-3 rounded-xl bg-white/[0.04] border border-white/[0.08] focus:border-white/30 text-sm text-white placeholder-white/20 outline-none transition resize-none"
