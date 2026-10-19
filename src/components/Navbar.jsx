@@ -45,14 +45,9 @@ export default function Navbar() {
             />
             <span className="text-xs font-bold tracking-wider text-white">JI</span>
           </div>
-          <div className="flex flex-col">
-            <span className="text-sm font-semibold text-white group-hover:text-white transition tracking-tight">
-              {portfolioData.personal.name}
-            </span>
-            <span className="text-[10px] text-muted -mt-0.5 hidden sm:block">
-              {portfolioData.personal.role}
-            </span>
-          </div>
+          <span className="text-sm font-semibold text-white group-hover:text-white transition tracking-tight">
+            {portfolioData.personal.name}
+          </span>
         </a>
 
         {/* Desktop Nav Items */}
