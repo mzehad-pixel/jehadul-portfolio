@@ -124,26 +124,43 @@ export default function Hero() {
                   </p>
                 </div>
 
-                {/* Quick Feature Highlights */}
-                <div className="grid grid-cols-2 gap-3 pt-4 border-t border-white/10">
-                  <div className="p-3 rounded-xl bg-white/[0.03] border border-white/[0.06]">
-                    <div className="flex items-center gap-2 text-white font-medium text-xs mb-1">
-                      <Layers className="w-3.5 h-3.5 text-white/70" />
-                      <span>Fintech & Banking</span>
+                {/* Domain Focus Card */}
+                <div className="pt-4 border-t border-white/10">
+                  <div className="p-3.5 sm:p-4 rounded-2xl bg-white/[0.03] border border-white/[0.08] hover:border-white/20 transition-all duration-300 group">
+                    <div className="flex items-center justify-between mb-2">
+                      <div className="flex items-center gap-2 text-white font-medium text-xs">
+                        <Layers className="w-3.5 h-3.5 text-emerald-400" />
+                        <span className="font-semibold tracking-tight">Core Industry Focus</span>
+                      </div>
+                      <span className="text-[10px] text-muted uppercase tracking-wider font-medium">Domain Expertise</span>
                     </div>
-                    <p className="text-[11px] text-muted leading-relaxed">
-                      MVP banking, remittance, digital wallets & EMI loans.
-                    </p>
-                  </div>
 
-                  <div className="p-3 rounded-xl bg-white/[0.03] border border-white/[0.06]">
-                    <div className="flex items-center gap-2 text-white font-medium text-xs mb-1">
-                      <Sparkles className="w-3.5 h-3.5 text-white/70" />
-                      <span>E-Commerce & OTT</span>
-                    </div>
-                    <p className="text-[11px] text-muted leading-relaxed">
-                      Global luxury retail (HUGO BOSS) & media streaming.
+                    <p className="text-[11px] sm:text-xs text-subtext leading-relaxed mb-3 font-normal">
+                      Designing mission-critical workflows, scalable MVPs, and high-conversion experiences across:
                     </p>
+
+                    <div className="flex flex-wrap gap-1.5 sm:gap-2">
+                      <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white/[0.04] border border-white/[0.08] text-[11px] font-medium text-white hover:border-white/25 transition">
+                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                        Fintech
+                      </span>
+                      <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white/[0.04] border border-white/[0.08] text-[11px] font-medium text-white hover:border-white/25 transition">
+                        <span className="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
+                        Digital Bank
+                      </span>
+                      <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white/[0.04] border border-white/[0.08] text-[11px] font-medium text-white hover:border-white/25 transition">
+                        <span className="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
+                        EdTech
+                      </span>
+                      <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white/[0.04] border border-white/[0.08] text-[11px] font-medium text-white hover:border-white/25 transition">
+                        <span className="w-1.5 h-1.5 rounded-full bg-rose-400"></span>
+                        HealthTech
+                      </span>
+                      <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white/[0.04] border border-white/[0.08] text-[11px] font-medium text-white hover:border-white/25 transition">
+                        <span className="w-1.5 h-1.5 rounded-full bg-purple-400"></span>
+                        E-Commerce
+                      </span>
+                    </div>
                   </div>
                 </div>
 
