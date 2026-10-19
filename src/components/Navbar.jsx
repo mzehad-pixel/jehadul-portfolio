@@ -34,11 +34,11 @@ export default function Navbar() {
       >
         {/* Logo / Brand */}
         <a href="#home" className="flex items-center gap-2.5 group">
-          <div className="w-9 h-9 rounded-full bg-gradient-to-tr from-white/10 to-white/30 border border-white/20 flex items-center justify-center overflow-hidden group-hover:border-white/40 transition-all">
+          <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-gradient-to-tr from-white/10 to-white/30 border border-white/20 flex items-center justify-center overflow-hidden group-hover:border-white/40 group-hover:scale-105 transition-all shadow-inner">
             <img 
               src={portfolioData.personal.avatar} 
               alt={portfolioData.personal.name} 
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover object-[center_32%]"
               onError={(e) => {
                 e.target.style.display = 'none';
               }}
