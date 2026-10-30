@@ -1,21 +1,30 @@
 import React, { useState } from 'react';
-import { portfolioData } from '../data/portfolioData';
 import ProjectModal from './ProjectModal';
+import KycCaseStudyModal from './KycCaseStudyModal';
+import QuickPayCaseStudyModal from './QuickPayCaseStudyModal';
+import MikeSportCaseStudyModal from './MikeSportCaseStudyModal';
+import { kycProject } from '../data/kycCaseStudy';
+import { quickPayProject } from '../data/quickPayCaseStudy';
+import { mikeSportProject } from '../data/mikeSportCaseStudy';
 import { ArrowUpRight, Sparkles, Filter } from 'lucide-react';
 
 export default function ProjectsSection() {
-  const { projects } = portfolioData;
+  // Only the case studies below are shown for now. The other projects remain in portfolioData.js.
+  const projects = [kycProject, quickPayProject, mikeSportProject];
   const [activeCategory, setActiveCategory] = useState('All');
   const [selectedProject, setSelectedProject] = useState(null);
 
-  const categories = ['All', 'Fintech', 'Design System', 'E-Commerce', 'Enterprise SaaS'];
+  const matchesCategory = (p, cat) =>
+    p.category.toLowerCase().includes(cat.toLowerCase()) ||
+    p.tags.some(t => t.toLowerCase().includes(cat.toLowerCase()));
+
+  // Only show filter tabs that have at least one project
+  const categories = ['All', 'Fintech', 'Design System', 'E-Commerce', 'Enterprise SaaS']
+    .filter(cat => cat === 'All' || projects.some(p => matchesCategory(p, cat)));
 
   const filteredProjects = activeCategory === 'All'
     ? projects
-    : projects.filter(p => 
-        p.category.toLowerCase().includes(activeCategory.toLowerCase()) || 
-        p.tags.some(t => t.toLowerCase().includes(activeCategory.toLowerCase()))
-      );
+    : projects.filter(p => matchesCategory(p, activeCategory));
 
   return (
     <section id="works" className="py-24 relative">
@@ -37,6 +46,7 @@ export default function ProjectsSection() {
         </div>
 
         {/* Filter Tabs */}
+        {projects.length > 1 && (
         <div className="flex flex-wrap items-center justify-center gap-2 mb-14">
           {categories.map((cat) => (
             <button
@@ -52,9 +62,10 @@ export default function ProjectsSection() {
             </button>
           ))}
         </div>
+        )}
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className={`grid grid-cols-1 gap-8 ${projects.length > 1 ? 'md:grid-cols-2' : 'max-w-3xl mx-auto mt-14'}`}>
           {filteredProjects.map((project, idx) => (
             <div
               key={project.id}
@@ -75,9 +86,11 @@ export default function ProjectsSection() {
                   <span className="px-3 py-1 rounded-full text-xs font-semibold bg-black/70 backdrop-blur-md text-white border border-white/10">
                     {project.category}
                   </span>
-                  <span className="px-2.5 py-1 rounded-full text-xs font-medium bg-black/60 backdrop-blur-md text-white/70 border border-white/10">
-                    {project.year}
-                  </span>
+                  {project.year && (
+                    <span className="px-2.5 py-1 rounded-full text-xs font-medium bg-black/60 backdrop-blur-md text-white/70 border border-white/10">
+                      {project.year}
+                    </span>
+                  )}
                 </div>
 
                 {/* Hover Trigger Action Button */}
@@ -89,9 +102,11 @@ export default function ProjectsSection() {
               {/* Card Meta Content */}
               <div className="p-6 sm:p-7 flex flex-col justify-between flex-grow">
                 <div>
-                  <div className="text-xs text-muted font-medium mb-1.5 uppercase tracking-wider">
-                    {project.client} • {project.role}
-                  </div>
+                  {(project.client || project.role) && (
+                    <div className="text-xs text-muted font-medium mb-1.5 uppercase tracking-wider">
+                      {[project.client, project.role].filter(Boolean).join(' • ')}
+                    </div>
+                  )}
                   <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight mb-2 group-hover:text-white transition">
                     {project.title}
                   </h3>
@@ -119,7 +134,20 @@ export default function ProjectsSection() {
       </div>
 
       {/* Case Study Modal */}
-      {selectedProject && (
+      {selectedProject && selectedProject.caseStudy === 'kyc' && (
+        <KycCaseStudyModal onClose={() => setSelectedProject(null)} />
+      )}
+      {selectedProject && selectedProject.caseStudy === 'quickpay' && (
+        <QuickPayCaseStudyModal onClose={() => setSelectedProject(null)} />
+      )}
+      {selectedProject && selectedProject.caseStudy === 'mikesport' && (
+        <MikeSportCaseStudyModal
+          onClose={() => setSelectedProject(null)}
+          onNext={() => setSelectedProject(kycProject)}
+          nextTitle={kycProject.title}
+        />
+      )}
+      {selectedProject && !selectedProject.caseStudy && (
         <ProjectModal
           project={selectedProject}
           onClose={() => setSelectedProject(null)}

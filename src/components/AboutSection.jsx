@@ -30,7 +30,7 @@ export default function AboutSection() {
             <span className="font-serif italic font-normal text-white/90">Purpose & Usability</span>
           </h2>
           <p className="text-subtext text-sm sm:text-base leading-relaxed">
-            "{personal.goal}"
+            {personal.goal}
           </p>
         </div>
 

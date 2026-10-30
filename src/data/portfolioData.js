@@ -7,7 +7,7 @@ export const portfolioData = {
     location: "Ibrahimpur Road, Mirpur 14, Dhaka, Bangladesh",
     availability: "Available for high-impact UX & Product Design roles",
     tagline: "Crafting Meaningful & Functional Products That Really Work",
-    goal: "My goal is to build meaningful and functional products that really work with extensive skills in SAAS, web, and mobile design. I’m passionate about design, new technology, and creating user-friendly, intuitive digital products and interfaces.",
+    goal: "A multidisciplinary Senior UX/Product Designer with 5+ years of experience crafting intuitive, user-centered digital experiences. Specializing in fintech, mobile and web applications, product strategy, and scalable design systems that balance user needs with business goals.",
     phone: "+88 01670566270",
     email: "m.zehad@gmail.com",
     linkedin: "https://shorturl.at/Tp9bL",

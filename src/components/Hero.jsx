@@ -34,7 +34,7 @@ export default function Hero() {
           </h1>
 
           <p className="text-base sm:text-lg md:text-xl text-subtext max-w-3xl mx-auto font-normal leading-relaxed mb-8">
-            "{personal.goal}"
+            {personal.goal}
           </p>
 
           {/* Action Buttons */}
@@ -56,20 +56,6 @@ export default function Hero() {
               <Download className="w-4 h-4 text-white/70" />
               <span>Download Resume</span>
             </a>
-          </div>
-
-          {/* Brands Ticker / Credibility Banner */}
-          <div className="flex flex-wrap items-center justify-center gap-y-2 gap-x-6 text-xs text-muted pb-4 border-b border-white/[0.06] max-w-2xl mx-auto">
-            <span className="text-white/40 uppercase tracking-widest text-[10px] font-semibold">Featured Work & Brands:</span>
-            <span className="text-white/80 font-medium">HUGO BOSS</span>
-            <span className="text-white/40">•</span>
-            <span className="text-white/80 font-medium">Mikesports</span>
-            <span className="text-white/40">•</span>
-            <span className="text-white/80 font-medium">MBC Group</span>
-            <span className="text-white/40">•</span>
-            <span className="text-white/80 font-medium">sManager</span>
-            <span className="text-white/40">•</span>
-            <span className="text-white/80 font-medium">Technohaven</span>
           </div>
         </div>
 
@@ -96,7 +82,6 @@ export default function Hero() {
                   
                   <div className="absolute bottom-4 left-4 right-4">
                     <p className="text-white font-semibold text-sm">{personal.name}</p>
-                    <p className="text-xs text-muted">📍 {personal.location}</p>
                   </div>
                 </div>
 
