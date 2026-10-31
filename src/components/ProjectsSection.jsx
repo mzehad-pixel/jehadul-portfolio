@@ -2,15 +2,17 @@ import React, { useState } from 'react';
 import ProjectModal from './ProjectModal';
 import KycCaseStudyModal from './KycCaseStudyModal';
 import QuickPayCaseStudyModal from './QuickPayCaseStudyModal';
+import BookiddoCaseStudyModal from './BookiddoCaseStudyModal';
 import MikeSportCaseStudyModal from './MikeSportCaseStudyModal';
 import { kycProject } from '../data/kycCaseStudy';
 import { quickPayProject } from '../data/quickPayCaseStudy';
+import { bookiddoProject } from '../data/bookiddoCaseStudy';
 import { mikeSportProject } from '../data/mikeSportCaseStudy';
 import { ArrowUpRight, Sparkles, Filter } from 'lucide-react';
 
 export default function ProjectsSection() {
   // Only the case studies below are shown for now. The other projects remain in portfolioData.js.
-  const projects = [kycProject, quickPayProject, mikeSportProject];
+  const projects = [bookiddoProject, kycProject, quickPayProject, mikeSportProject];
   const [activeCategory, setActiveCategory] = useState('All');
   const [selectedProject, setSelectedProject] = useState(null);
 
@@ -19,7 +21,7 @@ export default function ProjectsSection() {
     p.tags.some(t => t.toLowerCase().includes(cat.toLowerCase()));
 
   // Only show filter tabs that have at least one project
-  const categories = ['All', 'Fintech', 'Design System', 'E-Commerce', 'Enterprise SaaS']
+  const categories = ['All', 'Fintech', 'Marketplace', 'Design System', 'E-Commerce', 'Enterprise SaaS']
     .filter(cat => cat === 'All' || projects.some(p => matchesCategory(p, cat)));
 
   const filteredProjects = activeCategory === 'All'
@@ -139,6 +141,9 @@ export default function ProjectsSection() {
       )}
       {selectedProject && selectedProject.caseStudy === 'quickpay' && (
         <QuickPayCaseStudyModal onClose={() => setSelectedProject(null)} />
+      )}
+      {selectedProject && selectedProject.caseStudy === 'bookiddo' && (
+        <BookiddoCaseStudyModal onClose={() => setSelectedProject(null)} />
       )}
       {selectedProject && selectedProject.caseStudy === 'mikesport' && (
         <MikeSportCaseStudyModal
