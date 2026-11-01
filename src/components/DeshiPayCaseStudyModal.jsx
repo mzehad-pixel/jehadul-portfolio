@@ -233,6 +233,29 @@ export default function DeshiPayCaseStudyModal({ onClose }) {
                   </Card>
                 ))}
               </div>
+              {f.feature && (
+                <div className="mt-10 rounded-3xl border border-white/[0.07] bg-white/[0.02] p-6 sm:p-10 grid lg:grid-cols-[1fr_auto] gap-10 items-center">
+                  <div>
+                    <h4 className="text-xl sm:text-2xl font-bold text-white">{f.feature.title}</h4>
+                    <p className="mt-3 max-w-xl text-sm sm:text-[15px] text-subtext leading-relaxed">{f.feature.text}</p>
+                  </div>
+                  <div className="flex flex-wrap justify-center items-start gap-6 sm:gap-10">
+                    {f.feature.screens.map(([n, label]) => (
+                      <figure key={n} className="w-[240px]">
+                        <div
+                          onClick={() => setZoom(img(n))}
+                          className="rounded-[1.9rem] p-[7px] bg-gradient-to-b from-neutral-700 to-neutral-900 border border-white/15 shadow-2xl shadow-black/60 cursor-zoom-in"
+                        >
+                          <div className="rounded-[1.5rem] overflow-hidden bg-white">
+                            <img src={img(n)} alt={label} loading="lazy" className="block w-full h-auto" />
+                          </div>
+                        </div>
+                        <figcaption className="mt-3 text-xs font-semibold text-green-200/90 text-center">{label}</figcaption>
+                      </figure>
+                    ))}
+                  </div>
+                </div>
+              )}
               <PhoneStrip screens={f.screens} onZoom={setZoom} />
               {f.id === 'access' && (
                 <>

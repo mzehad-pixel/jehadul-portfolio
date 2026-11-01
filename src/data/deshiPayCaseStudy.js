@@ -104,9 +104,17 @@ export const deshiPayCaseStudy = {
         ["Two scanner modes, one surface.", "Scan QR to pay, Get Paid to receive — both in one Scanner so the counter interaction stays within seconds."],
         ["Navigation that mirrors the day.", "Home, Loyalty, a central Scan/Pay, Deals and Transaction — scanning sits where a thumb expects the primary action."],
       ],
+      feature: {
+        title: "The home screen — Tap for Balance",
+        text: "The merchant opens the app to Today's Sales, the four money actions and the latest transactions. The balance stays behind a “Tap for Balance” pill until the owner chooses to reveal it — so the app can be opened at a busy counter without showing the balance to everyone nearby.",
+        screens: [
+          ["09", "Balance hidden (default)"],
+          ["10", "Balance revealed on tap"],
+        ],
+      },
       screens: [
-        ["09", "Home"],
-        ["10", "Home — variant"],
+        ["09", "Home — balance hidden"],
+        ["10", "Home — balance revealed"],
         ["08", "Menu"],
         ["16", "Notifications"],
         ["06", "Scanner — Get Paid"],
