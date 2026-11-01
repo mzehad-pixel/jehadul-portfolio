@@ -1,6 +1,96 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { portfolioData } from '../data/portfolioData';
 import { ArrowDown, Download, Award, ShieldCheck, Layers, Sparkles, Building2 } from 'lucide-react';
+
+const prefersReducedMotion = () =>
+  typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+// Splits "1M+" into { num: 1, suffix: "M+" } so only the number counts up.
+function parseValue(value) {
+  const m = String(value).match(/^(\d+(?:\.\d+)?)(.*)$/);
+  return m ? { num: parseFloat(m[1]), suffix: m[2] } : { num: null, suffix: value };
+}
+
+function MetricCard({ item, index, visible }) {
+  const { num, suffix } = parseValue(item.value);
+  const [reduced] = useState(prefersReducedMotion);
+  const [count, setCount] = useState(num === null ? null : 0);
+
+  useEffect(() => {
+    if (!visible || num === null || reduced) return;
+    const duration = 1600;
+    const delay = index * 150;
+    let frame;
+    let start;
+    const tick = (t) => {
+      if (start === undefined) start = t + delay;
+      const p = Math.min(Math.max((t - start) / duration, 0), 1);
+      const eased = 1 - Math.pow(1 - p, 3);
+      setCount(Math.round(eased * num));
+      if (p < 1) frame = requestAnimationFrame(tick);
+    };
+    frame = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(frame);
+  }, [visible, num, index, reduced]);
+
+  return (
+    // Outer div handles the staggered reveal; inner card handles hover, so the stagger delay never slows hover.
+    <div
+      style={{ transitionDelay: visible ? `${index * 150}ms` : '0ms' }}
+      className={`transition-all duration-700 ease-out motion-reduce:transition-none ${
+        visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+      }`}
+    >
+    <div className="group relative h-full overflow-hidden glass-card rounded-2xl p-5 text-center border border-white/[0.06] hover:border-white/20 hover:-translate-y-1 transition-all duration-300">
+      {/* Shine sweep on hover */}
+      <span className="pointer-events-none absolute inset-y-0 -left-1/2 w-1/2 bg-gradient-to-r from-transparent via-white/[0.07] to-transparent skew-x-[-20deg] -translate-x-full group-hover:translate-x-[400%] transition-transform duration-1000 ease-out" />
+      {/* Accent glow that rises once the number lands */}
+      <span
+        style={{ transitionDelay: visible ? `${index * 150 + 900}ms` : '0ms' }}
+        className={`pointer-events-none absolute -bottom-10 left-1/2 -translate-x-1/2 w-32 h-16 rounded-full bg-emerald-400/20 blur-2xl transition-opacity duration-1000 group-hover:opacity-100 ${
+          visible ? 'opacity-60' : 'opacity-0'
+        }`}
+      />
+      <div className="relative text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-1 font-display tabular-nums">
+        {num === null ? item.value : `${reduced ? num : count}${suffix}`}
+      </div>
+      <div className="relative text-xs text-muted uppercase tracking-wider font-medium">{item.label}</div>
+    </div>
+    </div>
+  );
+}
+
+function MetricsBar({ metrics }) {
+  const ref = useRef(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el || typeof IntersectionObserver === 'undefined') {
+      setVisible(true);
+      return;
+    }
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+          io.disconnect();
+        }
+      },
+      { threshold: 0.3 }
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
+  return (
+    <div ref={ref} className="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-4xl mx-auto mt-12">
+      {metrics.map((item, index) => (
+        <MetricCard key={index} item={item} index={index} visible={visible} />
+      ))}
+    </div>
+  );
+}
 
 export default function Hero() {
   const { personal, metrics } = portfolioData;
@@ -155,21 +245,7 @@ export default function Hero() {
         </div>
 
         {/* Metrics Counter Bar */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-4xl mx-auto mt-12">
-          {metrics.map((item, index) => (
-            <div
-              key={index}
-              className="glass-card rounded-2xl p-5 text-center border border-white/[0.06] hover:border-white/20 transition-all"
-            >
-              <div className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-1 font-display">
-                {item.value}
-              </div>
-              <div className="text-xs text-muted uppercase tracking-wider font-medium">
-                {item.label}
-              </div>
-            </div>
-          ))}
-        </div>
+        <MetricsBar metrics={metrics} />
 
       </div>
     </section>
