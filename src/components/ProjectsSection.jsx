@@ -7,6 +7,7 @@ import DentalCaseStudyModal from './DentalCaseStudyModal';
 import GlobalSkillsCaseStudyModal from './GlobalSkillsCaseStudyModal';
 import MikeSportCaseStudyModal from './MikeSportCaseStudyModal';
 import SManagerCaseStudyModal from './SManagerCaseStudyModal';
+import DeshiPayCaseStudyModal from './DeshiPayCaseStudyModal';
 import { kycProject } from '../data/kycCaseStudy';
 import { quickPayProject } from '../data/quickPayCaseStudy';
 import { bookiddoProject } from '../data/bookiddoCaseStudy';
@@ -14,11 +15,12 @@ import { mikeSportProject } from '../data/mikeSportCaseStudy';
 import { dentalProject } from '../data/dentalCaseStudy';
 import { globalSkillsProject } from '../data/globalSkillsCaseStudy';
 import { sManagerProject } from '../data/sManagerCaseStudy';
+import { deshiPayProject } from '../data/deshiPayCaseStudy';
 import { ArrowUpRight, Sparkles, Filter } from 'lucide-react';
 
 export default function ProjectsSection() {
   // Only the case studies below are shown for now. The other projects remain in portfolioData.js.
-  const projects = [kycProject, quickPayProject, mikeSportProject, bookiddoProject, dentalProject, globalSkillsProject, sManagerProject];
+  const projects = [kycProject, quickPayProject, mikeSportProject, bookiddoProject, dentalProject, globalSkillsProject, sManagerProject, deshiPayProject];
   const [activeCategory, setActiveCategory] = useState('All');
   const [selectedProject, setSelectedProject] = useState(null);
 
@@ -159,6 +161,9 @@ export default function ProjectsSection() {
       )}
       {selectedProject && selectedProject.caseStudy === 'smanager' && (
         <SManagerCaseStudyModal onClose={() => setSelectedProject(null)} />
+      )}
+      {selectedProject && selectedProject.caseStudy === 'deshipay' && (
+        <DeshiPayCaseStudyModal onClose={() => setSelectedProject(null)} />
       )}
       {selectedProject && selectedProject.caseStudy === 'mikesport' && (
         <MikeSportCaseStudyModal
