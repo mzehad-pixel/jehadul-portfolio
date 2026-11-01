@@ -20,7 +20,7 @@ export const portfolioData = {
   },
   metrics: [
     { value: "5+", label: "Years Experience" },
-    { value: "10+", label: "Global Brands & Apps" },
+    { value: "70+", label: "Global Brands & Apps" },
     { value: "1M+", label: "Users Impacted" },
     { value: "100%", label: "Conversion Focused" },
   ],
