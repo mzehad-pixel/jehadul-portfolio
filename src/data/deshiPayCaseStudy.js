@@ -10,7 +10,7 @@ export const deshiPayProject = {
   title: "DeshiPay — Designing Trust into Payments",
   subtitle: "UX Case Study · PSP-licensed payment app · 54 screens",
   client: "DeshiPay (Dpay)",
-  year: "2020",
+  year: "2021",
   category: "Fintech",
   tags: ["Fintech", "Digital Wallet", "Merchant Payments", "Mobile App", "Trust & Security"],
   image: "/deshipay/cover.jpg",
@@ -24,7 +24,7 @@ export const deshiPayCaseStudy = {
   hero: {
     title: "Designing trust into everyday payments",
     subtitle:
-      "DeshiPay (Dpay), a digital payment app operating under a PSP licence from Bangladesh Bank, designed in 2020 for people who take payments, move money to their bank, send invoices and occasionally need to undo a transaction.",
+      "DeshiPay (Dpay), a digital payment app operating under a PSP licence from Bangladesh Bank, designed in 2021 for people who take payments, move money to their bank, send invoices and occasionally need to undo a transaction.",
     image: "/deshipay/cover.jpg",
   },
   intro:
@@ -33,7 +33,7 @@ export const deshiPayCaseStudy = {
     ["Product", "DeshiPay (Dpay) — digital payment app"],
     ["Licence", "Operates with a PSP (Payment Service Provider) licence from Bangladesh Bank — a licensed, regulated payment product"],
     ["Primary users", "Merchants and everyday users who receive payments, cash out to bank accounts, send invoices and manage daily transactions"],
-    ["Timeline", "2020"],
+    ["Timeline", "2021"],
     ["Role", "UI/UX Designer"],
     ["Design scope", "54 screens in the Adobe XD prototype: account access and recovery, merchant home and QR payments, cash out to bank, invoicing and money requests, refunds, transaction records, deals, offers and referrals"],
     ["Design themes", "Trust, security and clear confirmation states — the obligations of designing for licensed, regulated money"],
