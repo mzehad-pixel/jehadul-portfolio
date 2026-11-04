@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { portfolioData } from '../data/portfolioData';
-import { Mail, Phone, MapPin, Send, CheckCircle2, ArrowUpRight, Copy, Check, ExternalLink } from 'lucide-react';
+import { Mail, Phone, Send, CheckCircle2, Copy, Check } from 'lucide-react';
 
 export default function ContactSection() {
   const { personal } = portfolioData;
@@ -47,16 +47,16 @@ export default function ContactSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <div className="glass-card rounded-3xl border border-white/10 overflow-hidden grid grid-cols-1 lg:grid-cols-12">
           
-          {/* Left Column: Direct Contact Info & Socials */}
-          <div className="lg:col-span-5 glass-card rounded-3xl p-6 sm:p-8 border border-white/10 space-y-6">
+          {/* Left: direct contact info */}
+          <div className="lg:col-span-5 p-6 sm:p-8 lg:p-10 space-y-6 border-b lg:border-b-0 lg:border-r border-white/[0.06]">
             <div>
               <h3 className="text-lg font-bold text-white mb-2">
                 Contact Details
               </h3>
               <p className="text-xs sm:text-sm text-subtext leading-relaxed">
-                Feel free to email me, call directly, or explore my live portfolios across Dribbble, Behance, and LinkedIn.
+                Feel free to email me or call directly.
               </p>
             </div>
 
@@ -95,68 +95,10 @@ export default function ContactSection() {
               </div>
             </div>
 
-            {/* Location Card */}
-            <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/[0.06] flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-white/80">
-                <MapPin className="w-5 h-5" />
-              </div>
-              <div>
-                <span className="text-[10px] text-muted block uppercase tracking-wider font-semibold">Location</span>
-                <span className="text-xs sm:text-sm font-semibold text-white">
-                  {personal.location}
-                </span>
-              </div>
-            </div>
-
-            {/* Social & Portfolio Links from Resume */}
-            <div className="pt-4 border-t border-white/[0.06]">
-              <span className="text-xs font-semibold text-muted uppercase tracking-wider block mb-3">
-                Online Portfolios & Profiles
-              </span>
-              <div className="grid grid-cols-2 gap-2.5">
-                <a
-                  href={personal.dribbble}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex items-center justify-between p-3 rounded-xl bg-white/[0.03] border border-white/[0.06] hover:border-white/20 text-xs font-medium text-white transition group"
-                >
-                  <span>Dribbble</span>
-                  <ArrowUpRight className="w-3.5 h-3.5 text-muted group-hover:text-white transition" />
-                </a>
-                <a
-                  href={personal.behance}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex items-center justify-between p-3 rounded-xl bg-white/[0.03] border border-white/[0.06] hover:border-white/20 text-xs font-medium text-white transition group"
-                >
-                  <span>Behance</span>
-                  <ArrowUpRight className="w-3.5 h-3.5 text-muted group-hover:text-white transition" />
-                </a>
-                <a
-                  href={personal.linkedin}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex items-center justify-between p-3 rounded-xl bg-white/[0.03] border border-white/[0.06] hover:border-white/20 text-xs font-medium text-white transition group"
-                >
-                  <span>LinkedIn</span>
-                  <ArrowUpRight className="w-3.5 h-3.5 text-muted group-hover:text-white transition" />
-                </a>
-                <a
-                  href={personal.portfolioShort}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex items-center justify-between p-3 rounded-xl bg-white/[0.03] border border-white/[0.06] hover:border-white/20 text-xs font-medium text-white transition group"
-                >
-                  <span>Portfolio Doc</span>
-                  <ExternalLink className="w-3.5 h-3.5 text-muted group-hover:text-white transition" />
-                </a>
-              </div>
-            </div>
-
           </div>
 
-          {/* Right Column: Interactive Inquiry Form */}
-          <div className="lg:col-span-7 glass-card rounded-3xl p-6 sm:p-8 border border-white/10">
+          {/* Right: inquiry form */}
+          <div className="lg:col-span-7 p-6 sm:p-8 lg:p-10">
             {isSubmitted ? (
               <div className="py-16 text-center animate-in fade-in duration-300">
                 <div className="w-16 h-16 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 mx-auto flex items-center justify-center mb-6">
